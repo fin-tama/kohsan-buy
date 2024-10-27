@@ -24,8 +24,8 @@
 }
 
 .bg-shape2 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: 100px;
   position: relative;
   animation: two 10s infinite;
@@ -37,16 +37,16 @@
     top: 0px;
   }
   25% {
-    left: -10px;
-    top: -10px;
+    left: -100px;
+    top: -100px;
   }
   50% {
-    left: -20px;
-    top: -10px;
+    left: -150px;
+    top: -100px;
   }
   75% {
-    left: -50px;
-    top: -10px;
+    left: -150px;
+    top: -100px;
   }
   100% {
     left: 0px;
@@ -60,16 +60,16 @@
     top: 0px;
   }
   25% {
-    left: -50px;
-    top: -10px;
+    left: -150px;
+    top: -100px;
   }
   50% {
-    left: -10px;
-    top: -50px;
+    left: -100px;
+    top: -150px;
   }
   75% {
-    left: -50px;
-    top: -10px;
+    left: -150px;
+    top: -100px;
   }
   100% {
     left: 0px;
@@ -82,7 +82,7 @@
 }
 
 .bg-blur {
-  filter: blur(90px);
+  filter: blur();
 }
 
 .bg-primary {
