@@ -82,7 +82,7 @@
 }
 
 .bg-blur {
-  filter: blur();
+  filter: blur(90px);
 }
 
 .bg-primary {
