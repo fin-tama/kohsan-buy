@@ -174,16 +174,10 @@ body {
   html {
     font-size: 75%;
   }
-  .absolute {
-    min-width: 100%;
-  }
 }
 @media (max-width: 768px) {
   html {
     font-size: 62.5%;
-  }
-  .absolute {
-    min-width: 50%;
   }
   #menu {
     display: inline-block;
@@ -205,8 +199,5 @@ body {
 @media (max-width: 450px) {
   html {
     font-size: 55%;
-  }
-  .absolute {
-    min-width: 30%;
   }
 }
