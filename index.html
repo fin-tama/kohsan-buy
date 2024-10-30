@@ -16,7 +16,10 @@
     <link rel="stylesheet" href="style.css" />
 
     <!--alpine.js-->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
 
     <script src="src/app.js"></script>
   </head>
@@ -28,7 +31,7 @@
         <div class="bg-shape1 bg-purple opacity-50 bg-blur"></div>
       </div>
     </div>
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">kohsanBuy</a>
 
       <div class="navbar-nav">
@@ -37,19 +40,7 @@
         <a href="product.html">PRODUCT</a>
       </div>
       <div class="navbar-extra">
-        <a href="#" id="bookmark-button"><i data-feather="bookmark"></i></a>
         <a href="#" id="menu"><i data-feather="menu"></i></a>
-      </div>
-
-      <div class="wishlist">
-        <div class="wishlist-item">
-          <img src="assets/img/product/1.png" alt="" />
-          <div class="wishlist-detail">
-            <h3>product 1</h3>
-            <div class="wishlist-price">Rp.13.000</div>
-          </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
       </div>
     </nav>
 
