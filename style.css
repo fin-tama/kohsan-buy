@@ -459,6 +459,61 @@ img {
   margin: 0 0.5rem;
 }
 
+/*wishlist*/
+.wishlist {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: rgba(255, 255, 255, 0.521);
+  color: #000;
+  transition: 0.3s;
+}
+
+.wishlist.active {
+  right: 0;
+}
+
+.wishlist .wishlist-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #000000;
+  position: relative;
+}
+
+.wishlist img {
+  height: 6rem;
+  border-radius: 5px;
+}
+
+.wishlist h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.wishlist .wishlist-price {
+  font-size: 1.2rem;
+}
+
+.wishlist .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.wishlist .remove-item:hover {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  color: red;
+}
+/*wishlist*/
+
 #menu {
   display: none;
 }

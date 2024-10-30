@@ -10,3 +10,9 @@ document.addEventListener("click", function (e) {
     navbar.classList.remove("active");
   }
 });
+
+const wishlist = document.querySelector(".wishlist");
+document.querySelector("#bookmark-button").onclick = (e) => {
+  wishlist.classList.toggle("active");
+  e.preventDefault();
+};
