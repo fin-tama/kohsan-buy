@@ -14,6 +14,14 @@
     />
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="style.css" />
+
+    <!--alpine.js-->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <script src="src/app.js"></script>
   </head>
   <body>
     <div class="absolute">
@@ -23,7 +31,7 @@
         <div class="bg-shape1 bg-purple opacity-50 bg-blur"></div>
       </div>
     </div>
-    <nav class="navbar">
+    <nav class="navbar" x-data>
       <a href="#" class="navbar-logo">kohsanBuy</a>
 
       <div class="navbar-nav">
@@ -32,87 +40,70 @@
         <a href="product.html">PRODUCT</a>
       </div>
       <div class="navbar-extra">
-        <a href="#" id="bookmark-button"><i data-feather="bookmark"></i></a>
+        <a href="#" id="bookmark-button">
+          <i data-feather="bookmark"></i
+          ><span
+            class="quantity-notification"
+            x-text="$store.wishlist.quantity"
+            x-show="$store.wishlist.quantity"
+          ></span>
+        </a>
         <a href="#" id="menu"><i data-feather="menu"></i></a>
       </div>
 
       <div class="wishlist">
-        <div class="wishlist-item">
-          <img src="assets/img/product/1.png" alt="" />
-          <div class="wishlist-detail">
-            <h3>product 1</h3>
-            <div class="wishlist-price">Rp.13.000</div>
+        <template x-for="(item, index) in $store.wishlist.items" x-keys="index">
+          <div class="wishlist-item">
+            <img :src="`./assets/img/wishlists/${item.img}`" :alt="item.name" />
+            <div class="wishlist-detail">
+              <h3 x-text="item.name"></h3>
+              <div class="wishlist-price">
+                <span x-text="rupiah(item.price)"></span>&times;<button
+                  id="remove"
+                  @click="$store.wishlist.remove(item.id)"
+                >
+                  &minus;</button
+                ><span x-text="item.quantity"></span
+                ><button id="add" @click="$store.wishlist.add(item)">
+                  &plus;
+                </button>
+                &equals;<span x-text="rupiah(item.total)"></span>
+              </div>
+            </div>
           </div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
+        </template>
+        <h4 x-show="!$store.wishlist.items.length">Wishlist Kosong</h4>
+        <h4 x-show="$store.wishlist.items.length">
+          Total : <span x-text="rupiah($store.wishlist.total)"></span>
+        </h4>
       </div>
     </nav>
 
-    <section id="outlet" class="outlet">
+    <section id="outlet" class="outlet" x-data="wishlists">
       <h1>PRODUCT</h1>
       <div class="wrapper">
-        <div class="single-card">
-          <div class="img-area">
-            <img src="./assets/img/product/1.png" alt="" />
-            <div class="overlay">
-              <button class="add-to-cart">Tambah ke wishlist</button>
-              <button class="view-details">Pesan Ke Admin WA</button>
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="single-card">
+            <div class="img-area">
+              <img
+                :src="`./assets/img/wishlists/${item.img}`"
+                :alt="item.name"
+              />
+              <div class="overlay">
+                <button @click="$store.wishlist.add(item)" class="add-to-cart">
+                  Tambah ke wishlist
+                </button>
+                <button class="view-details">Pesan Ke Admin WA</button>
+              </div>
+            </div>
+
+            <div class="info">
+              <h3 x-text="item.name"></h3>
+              <p class="price" x-text="rupiah(item.price)"></p>
+              <p x-text="item.description"></p>
             </div>
           </div>
-
-          <div class="info">
-            <h3>Lumpia Original</h3>
-            <p class="price">Rp.13.000</p>
-            <p>Lumpia dengan isian rebung dan telur di dalamnya</p>
-          </div>
-        </div>
-
-        <div class="single-card">
-          <div class="img-area">
-            <img src="./assets/img/product/2.png" alt="" />
-            <div class="overlay">
-              <button class="add-to-cart">Tambah Wishlist</button>
-              <button class="view-details">Pesan Ke Admin WA</button>
-            </div>
-          </div>
-          <div class="info">
-            <h3>Lumpia Ayam</h3>
-            <p class="price">Rp.15.000</p>
-            <p>Lumpia dengan isian rebung dan ayam di dalamnya</p>
-          </div>
-        </div>
-
-        <div class="single-card">
-          <div class="img-area">
-            <img src="./assets/img/product/3.png" alt="" />
-            <div class="overlay">
-              <button class="add-to-cart">Tambah ke wishlist</button>
-              <button class="view-details">Pesan Ke Admin WA</button>
-            </div>
-          </div>
-          <div class="info">
-            <h3>Lumpia Udang</h3>
-            <p class="price">Rp.17.000</p>
-            <p>Lorem dengan isian rebung dan udang di dalamnya</p>
-          </div>
-        </div>
-
-        <div class="single-card">
-          <div class="img-area">
-            <img src="./assets/img/product/3.png" alt="" />
-            <div class="overlay">
-              <button class="add-to-cart">Tambah ke wishlist</button>
-              <button class="view-details">Pesan Ke Admin WA</button>
-            </div>
-          </div>
-          <div class="info">
-            <h3>Lumpia Special</h3>
-            <p class="price">Rp.18.000</p>
-            <p>
-              Lumpia dengan mix isian rebung, telur, ayam ,dan udang di dalamnya
-            </p>
-          </div>
-        </div>
+        </template>
       </div>
     </section>
 
