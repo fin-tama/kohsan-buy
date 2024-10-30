@@ -113,9 +113,7 @@ body {
   min-height: 2000px;
 }
 
-/*menu*/
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+/*outlet*/
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -166,7 +164,7 @@ img {
   display: grid;
   place-items: center;
   margin-inline: 1.5rem;
-  padding-block: 5rem;
+  padding-block: 7rem;
 }
 
 .card__container {
@@ -319,7 +317,102 @@ img {
   }
 }
 
-/*menu*/
+/*outlet*/
+
+/*product*/
+.wrapper {
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.single-card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 15px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  background: #4148528f;
+  border-radius: 15px;
+  transition: all 0.8s ease-in-out;
+}
+.single-card:hover {
+  transform: translateY(-10px);
+}
+.img-area {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.img-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.img-area:hover img {
+  transform: scale(1.1);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 174, 255, 0.295);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.single-card:hover .overlay {
+  opacity: 1;
+}
+.add-to-cart,
+.view-details {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 10px;
+}
+.add-to-cart:hover,
+.view-details:hover {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+.info {
+  padding: 10px;
+  text-align: center;
+  color: #ddd;
+}
+.info h3 {
+  margin: 15px 0 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+}
+.info .price {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: aliceblue;
+}
+/*product*/
 
 .navbar {
   display: flex;
@@ -398,6 +491,7 @@ img {
   line-height: 1.4;
   font-weight: 100;
   mix-blend-mode: hard-light;
+  color: aliceblue;
 }
 
 .outlet {
@@ -405,6 +499,7 @@ img {
 }
 
 .outlet h1 {
+  color: aliceblue;
   letter-spacing: 3px;
 }
 
