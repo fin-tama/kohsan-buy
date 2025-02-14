@@ -584,6 +584,11 @@ img {
 .buy-container .buy-button:hover {
   background-color: #8f009c;
 }
+
+.buy-container .buy-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
 /*buy form end*/
 
 #menu {
