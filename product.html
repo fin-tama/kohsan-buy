@@ -72,6 +72,9 @@
           </div>
         </template>
         <h4 x-show="!$store.wishlist.items.length">Daftar Beli Kosong</h4>
+        <h5 x-show="!$store.wishlist.items.length">
+          Jika sudah melakukan pemesanan harap tunggu admin membalas whatsapp
+        </h5>
         <h4 x-show="$store.wishlist.items.length">
           Total : <span x-text="rupiah($store.wishlist.total)"></span>
         </h4>
@@ -125,7 +128,6 @@
                 <button @click="$store.wishlist.add(item)" class="add-to-cart">
                   Beli Sekarang
                 </button>
-                <button class="view-details">Pesan Ke Admin WA</button>
               </div>
             </div>
 
