@@ -123,7 +123,7 @@ buyButton.addEventListener("click", function (e) {
   const objData = Object.fromEntries(data);
   const message = messageBuy(objData);
   window.open(
-    "http://wa.me/+6285925280430?text=" + encodeURIComponent(message)
+    "http://wa.me/+6285925280135?text=" + encodeURIComponent(message)
   );
 });
 
